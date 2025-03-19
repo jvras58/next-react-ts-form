@@ -3,13 +3,14 @@
 import ContactForm from "@/components/forms/contactForm";
 import { z } from "zod";
 import FormSchema from "@/schemas/contact";
+import { Toaster } from "@/components/ui/sonner";
 
 export default function ContactPage() {
-  const handleSubmit = (data: z.infer<typeof FormSchema>) => {
+  const handleSubmit = async (data: z.infer<typeof FormSchema>) => {
     try {
+      await new Promise(resolve => setTimeout(resolve, 1500));
       console.log("Dados do formulário:", data);
-      
-      alert("Formulário enviado com sucesso!");
+      return true;
     } catch (error) {
       console.error("Erro ao enviar formulário:", error);
       alert("Erro ao enviar formulário. Tente novamente.");
@@ -18,10 +19,10 @@ export default function ContactPage() {
 
   return (
     <div className="container mx-auto py-12 px-4">
-      <h1 className="text-3xl font-bold mb-8">Entre em contato</h1>
-      <div className="max-w-md">
+      <div className="max-w-md mx-auto">
         <ContactForm onSubmit={handleSubmit} />
       </div>
+      <Toaster />
     </div>
   );
 }

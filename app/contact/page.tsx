@@ -5,7 +5,7 @@ import { z } from "zod";
 import FormSchema from "@/schemas/contact";
 
 export default function ContactPage() {
-  const handleSubmit = async (data: z.infer<typeof FormSchema>) => {
+  const handleSubmit = (data: z.infer<typeof FormSchema>) => {
     try {
       console.log("Dados do formulário:", data);
       

@@ -13,7 +13,7 @@ const TextField = () => {
     <div>
       <label>{label}</label>
       <input 
-        value={field.value} 
+        value={field.value ?? ""} 
         name={field.name}
         ref={field.ref}
         onBlur={field.onBlur}

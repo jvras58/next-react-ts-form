@@ -1,12 +1,12 @@
 import { useTsController, useDescription } from "@ts-react/form";
 import { ChangeEvent } from "react";
-import { Input } from "./ui/input";
+import { Input } from "../ui/input";
 import {
   FormControl,
   FormItem,
   FormLabel,
   FormMessage
-} from "./ui/form";
+} from "../ui/form";
 
 const TextField = () => {
   const { field, error } = useTsController<string>();
@@ -21,7 +21,7 @@ const TextField = () => {
       <FormLabel>{label}</FormLabel>
       <FormControl>
         <Input 
-          value={field.value}
+          value={field.value ?? ''}
           name={field.name}
           ref={field.ref}
           onBlur={field.onBlur}

@@ -1,15 +1,14 @@
 'use client';
 
 import React from "react";
-import mapping from "@/components/forms/fieldMap";
-import { createTsForm } from "@ts-react/form";
+
 import FormSchema from "@/schemas/contact";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { ReloadIcon } from "@radix-ui/react-icons";
 import { useContactForm } from "@/hooks/useContactForm";
+import  Form  from "@/components/form";
 
-const Form = createTsForm(mapping);
 
 const ContactForm = () => {
   const { isSubmitting, submitContact } = useContactForm();
@@ -24,7 +23,7 @@ const ContactForm = () => {
         <Form
           schema={FormSchema}
           onSubmit={submitContact}
-          defaultValues={{ email: '', nome: '' }}
+          defaultValues={{ email: '', nome: '', checkbox: undefined, sexo: undefined }}
           renderAfter={() => (
             <Button 
               type="submit" 

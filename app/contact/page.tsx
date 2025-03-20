@@ -3,7 +3,6 @@
 import ContactForm from "@/components/forms/contactForm";
 import { z } from "zod";
 import FormSchema from "@/schemas/contact";
-import { Toaster } from "@/components/ui/sonner";
 
 export default function ContactPage() {
   const handleSubmit = async (data: z.infer<typeof FormSchema>) => {
@@ -22,7 +21,6 @@ export default function ContactPage() {
       <div className="max-w-md mx-auto">
         <ContactForm onSubmit={handleSubmit} />
       </div>
-      <Toaster />
     </div>
   );
 }

@@ -23,6 +23,9 @@ const ContactForm = () => {
         <Form
           schema={FormSchema}
           onSubmit={submitContact}
+          formProps={{
+            className: "space-y-6 max-w-md mx-auto p-6 rounded-lg"
+          }}
           defaultValues={{ email: '', nome: '', checkbox: undefined, sexo: undefined }}
           renderAfter={() => (
             <Button 

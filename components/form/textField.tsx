@@ -17,7 +17,7 @@ const TextField = () => {
   };
   
   return (
-    <FormItem className="space-y-1">
+    <FormItem className="space-y-2">
       <FormLabel>{label}</FormLabel>
       <FormControl>
         <Input 
